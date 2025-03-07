@@ -10,8 +10,8 @@ $profile_row=mysqli_fetch_assoc($row);
             <div class="card-body">
                 <h5 class="text-capitalize">Manage Profile</h5>
                 <hr />
-                <h6>Basic Infomation</h6>
-                <form action="">
+                <h6>Basic Information</h6>
+                <form action="../component/save_profile.php" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-5">
                             <img class="w-100 h-100 border" src="../component/upload/<?=$profile_row['profile_img']?>" alt="Profile Photo">
@@ -19,37 +19,37 @@ $profile_row=mysqli_fetch_assoc($row);
                         <div class="col-md-7">
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control" name="name" value="<?=$profile_row['name']?>" id="name" placeholder="Your Name" autofocus>
+                                <input type="text" class="form-control" name="name" value="<?=$profile_row['name']?>" id="name" placeholder="Your Name" required autofocus>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-12 mb-3">
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" value="<?=$profile_row['email']?>">
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" value="<?=$profile_row['email']?>" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <div class="form-group">
                                         <label for="phone">Phone No</label>
-                                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Contact No " value="<?=$profile_row['phone']?>">
+                                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Contact No" value="<?=$profile_row['phone']?>" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <div class="form-group">
                                         <label for="address">Address</label>
-                                        <input type="text" class="form-control" name="address" id="address" placeholder="Your Address" value="<?=$profile_row['address']?>">
+                                        <input type="text" class="form-control" name="address" id="address" placeholder="Your Address" value="<?=$profile_row['address']?>" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <div class="form-group">
                                         <label for="city">City</label>
-                                        <input type="text" class="form-control" name="city" id="file" placeholder="Your City" value="<?=$profile_row['city']?>">
+                                        <input type="text" class="form-control" name="city" id="city" placeholder="Your City" value="<?=$profile_row['city']?>" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <div class="form-group">
                                         <label for="file">Upload Profile Picture</label>
-                                        <input type="file" class="form-control" id="file" placeholder="Enter file">
+                                        <input type="file" class="form-control" id="file" name="profile_img" required>
                                     </div>
                                 </div>
                             </div>
@@ -58,74 +58,62 @@ $profile_row=mysqli_fetch_assoc($row);
                     <hr/>
                 <h6>About Me</h6>
                 <div class="row">
-                <div class="col-md-4 mb-3">
-                        <label for="">Title</label>
-                        <input type="text" class="form-control" id="" name="" value="<?=$profile_row['title']?>">
+                    <div class="col-md-4 mb-3">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" name="title" value="<?=$profile_row['title']?>" required>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="">Resume</label>
-                        <input type="file" class="form-control" id="" name="" value="<?=$profile_row['age']?>">
+                        <label for="resume">Resume</label>
+                        <input type="file" class="form-control" id="resume" name="cv" required>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="">Age</label>
-                        <input type="text" class="form-control" id="" name="" value="<?=$profile_row['age']?>">
+                        <label for="age">Age</label>
+                        <input type="text" class="form-control" id="age" name="age" value="<?=$profile_row['age']?>" required>
                     </div>
                     <div class="col-md-12 mb-3">
-                        <label for="">Introduction</label>
-                        <textarea name="" id="" rows="3" class="form-control"></textarea>
+                        <label for="intro">Introduction</label>
+                        <textarea name="intro" id="intro" rows="3" class="form-control" required><?=$profile_row['intro']?></textarea>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="">Gender</label>
-                        <input type="text" class="form-control" id="" name="" value="<?=$profile_row['age']?>">
+                        <label for="gender">Gender</label>
+                        <input type="text" class="form-control" id="gender" name="gender" value="<?=$profile_row['gender']?>" required>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="">Status</label>
-                        <input type="text" class="form-control" id="" name="" value="<?=$profile_row['age']?>">
+                        <label for="status">Status</label>
+                        <input type="text" class="form-control" id="status" name="status" value="<?=$profile_row['status']?>" required>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="">Experience(In Year's)</label>
-                        <input type="text" class="form-control" id="" name="" value="<?=$profile_row['age']?>">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="">Nationality</label>
-                        <input type="text" class="form-control" id="" name="" value="<?=$profile_row['age']?>">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="">Service Available</label>
-                        <input type="text" class="form-control" id="" name="" value="<?=$profile_row['age']?>">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="">Languages</label>
-                        <input type="text" class="form-control" id="" name="" value="<?=$profile_row['age']?>">
+                        <label for="experience">Experience (In Years)</label>
+                        <input type="text" class="form-control" id="experience" name="experience" value="<?=$profile_row['experience']?>" required>
                     </div>
                 </div>
                 <hr/>
                 <h6>Social Media Links & Logo</h6>
                 <div class="row">
                     <div class="col-md-4 mb-3">
-                        <label for="">Title</label>
-                        <input type="text" class="form-control" id="" name="" value="<?=$profile_row['link_1']?>">    
+                        <label for="link_1">Title</label>
+                        <input type="text" class="form-control" id="link_1" name="link_1" value="<?=$profile_row['link_1']?>" required>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="">Title</label>
-                        <input type="text" class="form-control" id="" name="" value="<?=$profile_row['link_2']?>">    
+                        <label for="link_2">Title</label>
+                        <input type="text" class="form-control" id="link_2" name="link_2" value="<?=$profile_row['link_2']?>" required>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="">Title</label>
-                        <input type="text" class="form-control" id="" name="" value="<?=$profile_row['link_3']?>">    
+                        <label for="link_3">Title</label>
+                        <input type="text" class="form-control" id="link_3" name="link_3" value="<?=$profile_row['link_3']?>" required>
                     </div>
                     <div class="col-md-6">
                         <label for="">Favicon Logo</label>
-                        <input type="file" class="form-control" id="" name="">
-                        <img class="border mt-2" width="auto" height="80" src="http://localhost/git/portfolio-varad/images/favicon.png" alt="favicon">
+                        <input type="file" class="form-control" id="" name="favicon" required>
+                        <img class="border mt-2" width="auto" height="80" src="../component/upload/<?=$profile_row['favicon']?>" alt="favicon">
                     </div>
                     <div class="col-md-6">
                         <label for="">Website Logo</label>
-                        <input type="file" class="form-control" id="" name="">
-                        <img class="border mt-2" width="auto" height="80" src="http://localhost/git/portfolio-varad/images/favicon.png" alt="logo">
+                        <input type="file" class="form-control" id="" name="logo" required>
+                        <img class="border mt-2" width="auto" height="80" src="../component/upload/<?=$profile_row['logo']?>" alt="logo">
                     </div>
                 </div>
-                <button class="btn btn-primary float-end">Update profile</button>
+                <button class="btn btn-primary float-end">Update Profile</button>
                 </form>
             </div>
         </div>
