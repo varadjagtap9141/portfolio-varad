@@ -13,8 +13,9 @@ $profile_row=mysqli_fetch_assoc($row);
                 <h6>Basic Information</h6>
                 <form action="../component/save_profile.php" method="post" enctype="multipart/form-data">
                     <div class="row">
+                        <input type="hidden" name="profile_id" value="<?=$profile_row['profile_id']?>">
                         <div class="col-md-5">
-                            <img class="w-100 h-100 border" src="../component/upload/<?=$profile_row['profile_img']?>" alt="Profile Photo">
+                            <img class="w-100 h-100" src="../component/upload/<?=$profile_row['profile_img']?>" alt="Profile Photo">
                         </div>
                         <div class="col-md-7">
                             <div class="form-group">
@@ -49,7 +50,7 @@ $profile_row=mysqli_fetch_assoc($row);
                                 <div class="col-md-12 mb-3">
                                     <div class="form-group">
                                         <label for="file">Upload Profile Picture</label>
-                                        <input type="file" class="form-control" id="file" name="profile_img" required>
+                                        <input type="file" class="form-control" id="file" name="profile_img">
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +65,7 @@ $profile_row=mysqli_fetch_assoc($row);
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="resume">Resume</label>
-                        <input type="file" class="form-control" id="resume" name="cv" required>
+                        <input type="file" class="form-control" id="resume" name="cv">
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="age">Age</label>
@@ -102,16 +103,29 @@ $profile_row=mysqli_fetch_assoc($row);
                         <label for="link_3">Title</label>
                         <input type="text" class="form-control" id="link_3" name="link_3" value="<?=$profile_row['link_3']?>" required>
                     </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="nationality">Title</label>
+                        <input type="text" class="form-control" id="nationality" name="nationality" value="<?=$profile_row['nationality']?>" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="available">Title</label>
+                        <input type="text" class="form-control" id="available" name="available" value="<?=$profile_row['available']?>" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="language">Title</label>
+                        <input type="text" class="form-control" id="language" name="language" value="<?=$profile_row['language']?>" required>
+                    </div>
                     <div class="col-md-6">
                         <label for="">Favicon Logo</label>
-                        <input type="file" class="form-control" id="" name="favicon" required>
-                        <img class="border mt-2" width="auto" height="80" src="../component/upload/<?=$profile_row['favicon']?>" alt="favicon">
+                        <input type="file" class="form-control" id="" name="favicon">
+                        <img class=" mt-2" width="auto" height="80" src="../component/upload/<?=$profile_row['favicon']?>" alt="favicon">
                     </div>
                     <div class="col-md-6">
                         <label for="">Website Logo</label>
-                        <input type="file" class="form-control" id="" name="logo" required>
-                        <img class="border mt-2" width="auto" height="80" src="../component/upload/<?=$profile_row['logo']?>" alt="logo">
+                        <input type="file" class="form-control" id="" name="logo">
+                        <img class=" mt-2" width="auto" height="80" src="../component/upload/<?=$profile_row['logo']?>" alt="logo">
                     </div>
+                    
                 </div>
                 <button class="btn btn-primary float-end">Update Profile</button>
                 </form>

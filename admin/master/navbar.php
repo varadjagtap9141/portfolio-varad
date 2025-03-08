@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<?php include "connection.php" ?>
+<?php include "connection.php" 
+?>
 <html
   lang="en"
   class="light-style layout-menu-fixed"
@@ -14,13 +15,17 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
-
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+  <?php
+  $query="SELECT * FROM profile";
+  $result=mysqli_query($conn,$query);
+  $profile_row=mysqli_fetch_assoc($result);
+  ?>
+    <title><?=$profile_row['title']?></title>
 
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../admin_assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../component/upload/<?=$profile_row['favicon']?>" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
