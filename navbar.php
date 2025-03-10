@@ -2,9 +2,17 @@
 <html>
 
 <head>
+    <?php
+    include "admin/master/connection.php";
+    ?>
+    <?php
+  $query="SELECT * FROM profile";
+  $result=mysqli_query($conn,$query);
+  $profile_row=mysqli_fetch_assoc($result);
+  ?>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio | Varad Jagtap</title>
+    <title><?=$profile_row['title']?></title>
 
     <!-- Meta Tags for SEO -->
     <meta name="description"
@@ -15,7 +23,7 @@
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph Meta Tags (for social media sharing) -->
-    <meta property="og:title" content="Portfolio | Varad Jagtap" />
+    <meta property="og:title" content="<?=$profile_row['title']?>" />
     <meta property="og:description"
         content="Explore Varad Jagtap's portfolio showcasing expertise in PHP full-stack development and web technologies." />
     <meta property="og:image" content="https://varadjagtap.netlify.app/images/favicon.png" />
@@ -33,7 +41,7 @@
 </head>
 <header class="active">
     <a href="#" class="logo">
-        <img width="auto" height="40" src="images/favicon.png" alt="">
+        <img width="auto" height="30" src="admin/component/upload/<?=$profile_row['logo']?>" alt="">
     </a>
     <i class="bx bx-menu" id="menu-icon"></i>
     <nav>

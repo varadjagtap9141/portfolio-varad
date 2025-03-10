@@ -92,27 +92,27 @@ $profile_row=mysqli_fetch_assoc($row);
                 <h6>Social Media Links & Logo</h6>
                 <div class="row">
                     <div class="col-md-4 mb-3">
-                        <label for="link_1">Title</label>
+                        <label for="link_1">GitHub Link</label>
                         <input type="text" class="form-control" id="link_1" name="link_1" value="<?=$profile_row['link_1']?>" required>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="link_2">Title</label>
+                        <label for="link_2">LinkedIn Link</label>
                         <input type="text" class="form-control" id="link_2" name="link_2" value="<?=$profile_row['link_2']?>" required>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="link_3">Title</label>
+                        <label for="link_3">Instagram Link</label>
                         <input type="text" class="form-control" id="link_3" name="link_3" value="<?=$profile_row['link_3']?>" required>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="nationality">Title</label>
+                        <label for="nationality">Nationality</label>
                         <input type="text" class="form-control" id="nationality" name="nationality" value="<?=$profile_row['nationality']?>" required>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="available">Title</label>
+                        <label for="available">Service Available</label>
                         <input type="text" class="form-control" id="available" name="available" value="<?=$profile_row['available']?>" required>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="language">Title</label>
+                        <label for="language">Languages</label>
                         <input type="text" class="form-control" id="language" name="language" value="<?=$profile_row['language']?>" required>
                     </div>
                     <div class="col-md-6">
@@ -127,7 +127,7 @@ $profile_row=mysqli_fetch_assoc($row);
                     </div>
                     
                 </div>
-                <button class="btn btn-primary float-end">Update Profile</button>
+                <button onClick="return confirm('Are You Sure?')" class="btn btn-primary float-end">Update Profile</button>
                 </form>
             </div>
         </div>

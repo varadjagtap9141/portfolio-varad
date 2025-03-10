@@ -1,5 +1,9 @@
 <?php include "navbar.php";?>
-
+<?php
+  $query="SELECT * FROM profile";
+  $result=mysqli_query($conn,$query);
+  $profile_row=mysqli_fetch_assoc($result);
+  ?>
 <!-- bars background -->
 <div class="bars-box active">
     <div class="bar" style="--i: 6"></div>
@@ -13,36 +17,40 @@
 <!-- home section -->
 <section class="home active">
     <div class="home-detail">
-        <h1>Varad Jagtap</h1>
+        <?php
+        $query="SELECT * FROM highlight";
+        $result=mysqli_query($conn,$query);
+        ?>
+        <h1><?=$profile_row['name']?></h1>
         <h2>
             I'm a
-            <span style="--i: 4" data-text="Coder">Coder</span>
+            <!-- <span style="--i: 4" data-text="Coder">Coder</span>
 
             <span style="--i: 3" data-text="PHP Developer">PHP Developer</span>
 
             <span style="--i: 2" data-text="Web Developer">Web Developer</span>
 
-            <span style="--i: 1" data-text="Full Stack Developer">Full Stack Developer</span>
+            <span style="--i: 1" data-text="Full Stack Developer">Full Stack Developer</span> -->
+            <?php
+            foreach($result as $highlight_row)
+            {
+                ?>
+                <span style="--i: 4" data-text="<?=$highlight_row['highlight_name']?>"><?=$highlight_row['highlight_name']?></span>
+                <?php
+            }
+            ?>
         </h2>
         <p>
-            I am a skilled full-stack developer specializing in PHP, with
-            expertise in creating dynamic and user-friendly web solutions. I hold
-            a Bachelor of Science in Computer Science from New Arts, Commerce, and
-            Science College, Ahmednagar. Proficient in front-end and back-end
-            technologies like HTML, CSS, Bootstrap, JavaScript. I
-            design and develop professional websites with a focus on performance
-            and usability. Passionate about innovation and continuous learning, I
-            strive to implement creative solutions that enhance digital
-            experiences.
+            <?=$profile_row['intro']?>
         </p>
         <div class="btn-sci">
-            <a href="assets/varad_jagtap_resume_919096180102.pdf" download class="btn">Download CV</a>
+            <a href="admin/component/upload/<?=$profile_row['cv']?>" download class="btn">Download CV</a>
             <div class="sci">
-                <a href="https://github.com/varadjagtap9141" target="_blank" rel="noopener noreferrer"><i
+                <a href="<?=$profile_row['link_1']?>" target="_blank" rel="noopener noreferrer"><i
                         class="bx bxl-github"></i></a>
-                <a href="https://www.linkedin.com/in/varad-jagtap/" target="_blank" rel="noopener noreferrer"><i
+                <a href="<?=$profile_row['link_2']?>" target="_blank" rel="noopener noreferrer"><i
                         class="bx bxl-linkedin"></i></a>
-                <a href="https://www.instagram.com/varad_jagtap_9141/" target="_blank" rel="noopener noreferrer"><i
+                <a href="<?=$profile_row['link_3']?>" target="_blank" rel="noopener noreferrer"><i
                         class='bx bxl-instagram'></i></a>
             </div>
         </div>
@@ -51,7 +59,7 @@
     <div class="home-img">
         <div class="img-box">
             <div class="img-item">
-                <img src="images/logo2.png" alt="Home Image" />
+                <img src="admin/component/upload/<?=$profile_row['profile_img']?>" alt="Home Image" />
             </div>
         </div>
     </div>
@@ -310,38 +318,38 @@
                 <h2 class="heading">About <span>Me</span></h2>
                 <div class="resume-list">
                     <div class="resume-item">
-                        <p>Name <span>Varad Jagtap</span></p>
+                        <p>Name <span><?=$profile_row['name']?></span></p>
                     </div>
                     <div class="resume-item">
-                        <p>Gender <span>Male</span></p>
+                        <p>Gender <span><?=$profile_row['gender']?></span></p>
                     </div>
                     <div class="resume-item">
-                        <p>Age <span>22</span></p>
+                        <p>Age <span><?=$profile_row['age']?></span></p>
                     </div>
                     <div class="resume-item">
-                        <p>Status <span>Unmarried</span></p>
+                        <p>Status <span><?=$profile_row['status']?></span></p>
                     </div>
                     <div class="resume-item">
-                        <p>City <span>Ahmednagar, Maharashtra</span></p>
+                        <p>City <span><?=$profile_row['city']?></span></p>
                     </div>
                     <div class="resume-item">
-                        <p>Nationality <span>Indian</span></p>
+                        <p>Nationality <span><?=$profile_row['nationality']?></span></p>
                     </div>
                     <div class="resume-item">
-                        <p>Experience <span>1 year</span></p>
+                        <p>Experience <span><?=$profile_row['experience']?></span></p>
                     </div>
                     <div class="resume-item">
-                        <p>Available <span>24x7</span></p>
+                        <p>Available <span><?=$profile_row['available']?></span></p>
                     </div>
 
                     <div class="resume-item">
-                        <p>Phone <span>+91 9096180102</span></p>
+                        <p>Phone <span>+91 <?=$profile_row['phone']?></span></p>
                     </div>
                     <div class="resume-item">
-                        <p>Email <span>varadjagtap31@gmail.com</span></p>
+                        <p>Email <span><?=$profile_row['email']?></span></p>
                     </div>
                     <div class="resume-item">
-                        <p>Languages <span>Marathi, Hindi, English</span></p>
+                        <p>Languages <span><?=$profile_row['language']?></span></p>
                     </div>
                 </div>
             </div>
@@ -421,70 +429,6 @@
                             class="bx bxl-github"></i><span>Github Repository</span></a>
                 </div>
             </div>
-            <!-- <div class="portfolio-detail">
-          <p class="numb">04</p>
-          <h3>Billing Demo</h3>
-          <p>
-            This project is a simple billing system designed to calculate and
-            manage product prices, including quantity, rate, discount, and
-            total. Users can input product details, calculate totals, and save
-            the data to a table. The project also supports persistent data
-            storage using localStorage, ensuring the information is preserved
-            even after page reloads.
-          </p>
-          <div class="tech">
-            <p>HTML, Bootstrap</p>
-          </div>
-          <div class="live-github">
-            <a href="https://billing-demo.vercel.app/" target="_blank" rel="noopener noreferrer"><i
-                class="bx bx-arrow-back"></i><span>Live Project</span></a>
-            <a href="https://github.com/KumarDalvi/billing-demo" target="_blank" rel="noopener noreferrer"><i
-                class="bx bxl-github"></i><span>Github Repository</span></a>
-          </div>
-        </div>
-        <div class="portfolio-detail">
-          <p class="numb">05</p>
-          <h3>Live Code Editor</h3>
-          <p>
-            This project is a live code editor that allows users to input
-            HTML, CSS, and JavaScript code in separate text areas. As the user
-            types, the output is displayed in real-time in an iframe below the
-            input fields. This is ideal for testing small code snippets and
-            seeing the results instantly.
-          </p>
-          <div class="tech">
-            <p>HTML, CSS, JavaScript, FontAwesome</p>
-          </div>
-          <div class="live-github">
-            <a href="https://live-code-editor-silk.vercel.app/" target="_blank" rel="noopener noreferrer"><i
-                class="bx bx-arrow-back"></i><span>Live Project</span></a>
-            <a href="https://github.com/KumarDalvi/live-code-editor" target="_blank" rel="noopener noreferrer"><i
-                class="bx bxl-github"></i><span>Github Repository</span></a>
-          </div>
-        </div>
-
-        <div class="portfolio-detail">
-          <p class="numb">06</p>
-          <h3>Cart System</h3>
-          <p>
-            This project simulates a basic cart system where users can add
-            products with quantity and rate, adjust quantities, and calculate
-            the total price. The cart is built using HTML, CSS, JavaScript,
-            and Bootstrap for styling. It allows the user to dynamically
-            update product quantities and see the total price in real time.
-            The delete button clears the data for each product row.
-          </p>
-          <div class="tech">
-            <p>HTML, CSS, JavaScript, Bootstrap</p>
-          </div>
-
-          <div class="live-github">
-            <a href="https://cart-system-seven.vercel.app/" target="_blank" rel="noopener noreferrer"><i
-                class="bx bx-arrow-back"></i><span>Live Project</span></a>
-            <a href="https://github.com/KumarDalvi/cart-system" target="_blank" rel="noopener noreferrer"><i
-                class="bx bxl-github"></i><span>Github Repository</span></a>
-          </div>
-        </div> -->
         </div>
         <div class="portfolio-box">
             <div class="portfolio-carousel">
@@ -498,15 +442,6 @@
                     <div class="img-item">
                         <img src="images/portfolio3.jpg" alt="" />
                     </div>
-                    <!-- <div class="img-item">
-              <img src="images/billing-demo-thumbnails.png" alt="" />
-            </div>
-            <div class="img-item">
-              <img src="images/live-code-editor.png" alt="" />
-            </div>
-            <div class="img-item">
-              <img src="images/cart-system-thumbnail.png" alt="" />
-            </div> -->
                 </div>
             </div>
             <div class="navigation">
@@ -535,21 +470,21 @@
                 <i class="bx bxs-phone"></i>
                 <div class="detail">
                     <p>Phone</p>
-                    <p>(+91) 9096180102</p>
+                    <p>(+91) <?=$profile_row['phone']?></p>
                 </div>
             </div>
             <div class="contact-detail">
                 <i class="bx bxs-envelope"></i>
                 <div class="detail">
                     <p>Email</p>
-                    <p>varadjagtap31@gmail.com</p>
+                    <p><?=$profile_row['email']?></p>
                 </div>
             </div>
             <div class="contact-detail">
                 <i class="bx bxs-map"></i>
                 <div class="detail">
                     <p>Address</p>
-                    <p>Police Colony Savedi, Ahmednagar</p>
+                    <p><?=$profile_row['address']?></p>
                 </div>
             </div>
         </div>

@@ -92,7 +92,12 @@
                 <div data-i18n="Analytics">Profile</div>
               </a>
             </li>
-
+            <li class="menu-item">
+              <a href="highlight.php" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-star"></i>
+                <div data-i18n="Analytics">Highlight's</div>
+              </a>
+            </li>
             <!-- Layouts -->
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -148,7 +153,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="../admin_assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="../component/upload/<?=$profile_row['profile_img']?>" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -157,7 +162,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="../admin_assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="../component/upload/<?=$profile_row['profile_img']?>" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
