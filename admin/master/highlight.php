@@ -3,7 +3,6 @@ $query="SELECT * FROM highlight";
 $result=mysqli_query($conn,$query);
 $highlight_row=mysqli_fetch_array($result);
 
-print_r($highlight_row);
 ?>
 <div class="row">
     <div class="col-md-12">
@@ -13,7 +12,7 @@ print_r($highlight_row);
                 <hr/>
                 <form action="../component/save_highlight.php" method="post">
                     <div class="row">
-                        <input type="text" name="highlight_id" value="<?=$highlight_row['highlight_id']?>">
+                        <input type="hidden" name="highlight_id" value="<?=$highlight_row['highlight_id']?>">
                         <div class="col-md-6 mb-3">
                             <label for="post_1">Who I am?</label>
                             <input id="post_1" type="text" class="form-control" name="post_1" autofocus value="<?=$highlight_row['post_1']?>">

@@ -20,25 +20,18 @@
         <?php
         $query="SELECT * FROM highlight";
         $result=mysqli_query($conn,$query);
+        $highlight_row=mysqli_fetch_array($result);
         ?>
         <h1><?=$profile_row['name']?></h1>
         <h2>
             I'm a
-            <!-- <span style="--i: 4" data-text="Coder">Coder</span>
+            <span style="--i: 4" data-text="<?=$highlight_row['post_1']?>"><?=$highlight_row['post_1']?></span>
 
-            <span style="--i: 3" data-text="PHP Developer">PHP Developer</span>
+            <span style="--i: 3" data-text="<?=$highlight_row['post_4']?>"><?=$highlight_row['post_4']?></span>
 
-            <span style="--i: 2" data-text="Web Developer">Web Developer</span>
+            <span style="--i: 2" data-text="<?=$highlight_row['post_2']?>"><?=$highlight_row['post_2']?></span>
 
-            <span style="--i: 1" data-text="Full Stack Developer">Full Stack Developer</span> -->
-            <?php
-            foreach($result as $highlight_row)
-            {
-                ?>
-                <span style="--i: 4" data-text="<?=$highlight_row['highlight_name']?>"><?=$highlight_row['highlight_name']?></span>
-                <?php
-            }
-            ?>
+            <span style="--i: 1" data-text="<?=$highlight_row['post_3']?>"><?=$highlight_row['post_3']?></span>
         </h2>
         <p>
             <?=$profile_row['intro']?>
@@ -69,21 +62,27 @@
 <section class="services">
     <h2 class="heading">My <span>Services</span></h2>
     <div class="services-container">
-        <div class="services-box">
+       <?php
+       $query="SELECT * FROM services";
+       $result=mysqli_query($conn,$query);
+       foreach($result as $service_row)
+       {
+        ?>
+         <div class="services-box">
             <div class="icon">
                 <i class="bx bx-code-alt"></i>
                 <a href="#"><i class="bx bx-arrow-back"></i></a>
             </div>
-            <h3>Resp. Web Design & Development</h3>
+            <h3><?=$service_row['service_title']?></h3>
             <p>
-                Creating websites that work seamlessly on all devices (desktops,
-                tablets, smartphones) using HTML, CSS, JavaScript, and Bootstrap.
-                Providing UI/UX design solutions for a smooth, intuitive user
-                experience.
+                <?=$service_row['service_subtitle']?>
             </p>
         </div>
+        <?php
+       }
+       ?>
 
-        <div class="services-box">
+        <!-- <div class="services-box">
             <div class="icon">
                 <i class="bx bx-code-alt"></i>
                 <a href="#"><i class="bx bx-arrow-back"></i></a>
@@ -121,7 +120,7 @@
                 development,
                 and MySQL for optimized database management.
             </p>
-        </div>
+        </div> -->
     </div>
 </section>
 

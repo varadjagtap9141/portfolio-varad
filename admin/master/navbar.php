@@ -98,6 +98,12 @@
                 <div data-i18n="Analytics">Highlight's</div>
               </a>
             </li>
+            <li class="menu-item">
+              <a href="service.php" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-laptop"></i>
+                <div data-i18n="Analytics">Services</div>
+              </a>
+            </li>
             <!-- Layouts -->
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
