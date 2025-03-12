@@ -106,15 +106,25 @@
             </li>
             <!-- Layouts -->
             <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Layouts</div>
+              <a href="" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-note"></i>
+                <div data-i18n="Resume">Resume</div>
               </a>
 
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="layouts-without-menu.html" class="menu-link">
-                    <div data-i18n="Without menu">Without menu</div>
+                  <a href="experience.php" class="menu-link">
+                    <div data-i18n="Experience">Experience</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="education.php" class="menu-link">
+                    <div data-i18n="Education">Education</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="skill.php" class="menu-link">
+                    <div data-i18n="Skills">Skills</div>
                   </a>
                 </li>
               </ul>

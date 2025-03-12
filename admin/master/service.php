@@ -52,7 +52,7 @@
                             <td class="d-flex">
                                 <a href="edit_service.php?service_id=<?=$data['service_id']?>"
                                     class="btn btn-primary btn-sm mx-1"><i class='bx bx-edit'></i></a>
-                                <a href="../component/delete_service.php?service_id=<?=$data['service_id']?>"
+                                <a onClick="return confirm('Are You Sure?')" href="../component/delete_service.php?service_id=<?=$data['service_id']?>"
                                     class="btn btn-danger btn-sm mx-1"><i class='bx bx-trash'></i></a>
                             </td>
                         </tr>

@@ -81,46 +81,6 @@
         <?php
        }
        ?>
-
-        <!-- <div class="services-box">
-            <div class="icon">
-                <i class="bx bx-code-alt"></i>
-                <a href="#"><i class="bx bx-arrow-back"></i></a>
-            </div>
-            <h3>Full-Stack Web Development</h3>
-            <p>
-                Developing dynamic web applications using a combination of frontend
-                (HTML, CSS, Bootstrap, JavaScript) and backend technologies (PHP, MySQL). Building scalable, secure, and
-                high-performance web
-                applications.
-            </p>
-        </div>
-
-        <div class="services-box">
-            <div class="icon">
-                <i class="bx bx-code-alt"></i>
-                <a href="#"><i class="bx bx-arrow-back"></i></a>
-            </div>
-            <h3>Single-Page Applications (SPA)</h3>
-            <p>
-                Building responsive and fast Single-Page Applications
-                for better user engagement and performance.
-            </p>
-        </div>
-
-        <div class="services-box">
-            <div class="icon">
-                <i class="bx bx-code-alt"></i>
-                <a href="#"><i class="bx bx-arrow-back"></i></a>
-            </div>
-            <h3>Backend Development</h3>
-            <p>
-                Providing secure, scalable, and high-performance backend solutions using PHP, CodeIgniter 3, and MySQL.
-                Leveraging PHP for dynamic server-side functionalities, CodeIgniter 3 for structured MVC-based
-                development,
-                and MySQL for optimized database management.
-            </p>
-        </div> -->
     </div>
 </section>
 

@@ -10,7 +10,7 @@ $service_row=mysqli_fetch_assoc($result);
             <div class="card-body">
                 <h5 class="text-capitalize">Add Services</h5>
                 <hr />
-                <form action="../component/save_service.php" method="post">
+                <form action="../component/update_service.php" method="post">
                     <div class="row">
                         <input type="hidden" name="service_id" value="<?=$service_row['service_id']?>">
                         <div class="col-md-12 mb-3">
@@ -24,7 +24,7 @@ $service_row=mysqli_fetch_assoc($result);
                                 required><?=$service_row['service_subtitle']?></textarea>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary float-end">Add Service</button>
+                    <button onClick="return confirm('Are You Sure?')" type="submit" class="btn btn-primary float-end">Update Service</button>
                 </form>
             </div>
         </div>

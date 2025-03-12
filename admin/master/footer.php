@@ -1,5 +1,10 @@
  <!-- Footer -->
 </div>
+<?php
+  $query="SELECT * FROM profile";
+  $result=mysqli_query($conn,$query);
+  $profile_row=mysqli_fetch_assoc($result);
+?>
  <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
                 <div class="mb-2 mb-md-0">
@@ -7,8 +12,8 @@
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  , made with ❤️ by
-                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+                  ,
+                  <a href="<?=$profile_row['link_2']?>" target="_blank" class="footer-link fw-bolder"><?=$profile_row['name']?></a>
                 </div>
               </div>
             </footer>
