@@ -102,32 +102,28 @@
             <button class="resume-btn">Education</button>
             <button class="resume-btn">Skills</button>
             <button class="resume-btn">About Me</button>
-        </div>
+        </div>  
         <div class="resume-box">
             <div class="resume-detail Experience active">
                 <h2 class="heading">My <span>Experience</span></h2>
                 <div class="resume-list">
-                    <div class="resume-item">
-                        <p class="year">July 2024 - Dec 2024</p>
-                        <h3>Full Stack Web Developer Intern</h3>
-                        <p class="company">A2Z IT HUB PVT LTD</p>
+                    <?php
+                    $query="SELECT description, company, position, DATE_FORMAT(start_date, '%M %Y') AS start_date, DATE_FORMAT(end_date, '%M %Y') AS end_date FROM experience";
+                    $result=mysqli_query($conn,$query);
+                    foreach($result as $experience_row)
+                    {
+                        ?>
+                        <div class="resume-item">
+                        <p class="year"><?=$experience_row['start_date']?> - <?=$experience_row['end_date']?></p>
+                        <h3><?=$experience_row['position']?></h3>
+                        <p class="company"><?=$experience_row['company']?></p>
                         <p>
-                            Gained hands-on experience in full-stack development, building dynamic web applications
-                            using PHP, and
-                            modern
-                            front-end technologies.
-                            Contributed to real-world projects, enhancing problem-solving skills and applying
-                            theoretical knowledge
-                            in a professional
-                            environment.
-                            Led a team of developers, coordinating tasks and ensuring successful project completion
-                            within
-                            deadlines.
-                            Collaborated with team members to design, develop, and debug code, ensuring optimal
-                            performance and
-                            usability.
+                           <?=$experience_row['description']?>
                         </p>
                     </div>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
 

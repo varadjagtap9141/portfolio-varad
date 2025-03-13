@@ -56,7 +56,6 @@
                                     class="btn btn-danger btn-sm mx-1"><i class='bx bx-trash'></i></a>
                             </td>
                         </tr>
-                        </tr>
                         <?php
                         }
                         ?>
