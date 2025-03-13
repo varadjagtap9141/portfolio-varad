@@ -62,13 +62,13 @@
 <section class="services">
     <h2 class="heading">My <span>Services</span></h2>
     <div class="services-container">
-       <?php
+        <?php
        $query="SELECT * FROM services";
        $result=mysqli_query($conn,$query);
        foreach($result as $service_row)
        {
         ?>
-         <div class="services-box">
+        <div class="services-box">
             <div class="icon">
                 <i class="bx bx-code-alt"></i>
                 <a href="#"><i class="bx bx-arrow-back"></i></a>
@@ -102,7 +102,7 @@
             <button class="resume-btn">Education</button>
             <button class="resume-btn">Skills</button>
             <button class="resume-btn">About Me</button>
-        </div>  
+        </div>
         <div class="resume-box">
             <div class="resume-detail Experience active">
                 <h2 class="heading">My <span>Experience</span></h2>
@@ -113,15 +113,15 @@
                     foreach($result as $experience_row)
                     {
                         ?>
-                        <div class="resume-item">
+                    <div class="resume-item">
                         <p class="year"><?=$experience_row['start_date']?> - <?=$experience_row['end_date']?></p>
                         <h3><?=$experience_row['position']?></h3>
                         <p class="company"><?=$experience_row['company']?></p>
                         <p>
-                           <?=$experience_row['description']?>
+                            <?=$experience_row['description']?>
                         </p>
                     </div>
-                        <?php
+                    <?php
                     }
                     ?>
                 </div>
@@ -130,82 +130,26 @@
             <div class="resume-detail Education">
                 <h2 class="heading">My <span>Education</span></h2>
                 <div class="resume-list">
-                    <!-- <div class="resume-item">
-              <p class="year">2024</p>
-              <h3>PHP Full Stack Developement</h3>
-              <p class="company">Offline Course</p>
-              <p>
-                Completed an offline Java Full Stack Developer course, gaining
-                in-depth knowledge and hands-on experience in building robust
-                web applications using Java, Spring Boot, and frontend
-                technologies.
-                <br /><br />
-                Strengthened full-stack development skills and mastered tools
-                to create scalable and efficient solutions.
-              </p>
-            </div> -->
 
+                    <?php
+                    $query="SELECT education_id, description, university, education, DATE_FORMAT(start_year, '%Y') AS start_year, DATE_FORMAT(end_year, '%Y') AS end_year FROM education";
+                    $result=mysqli_query($conn,$query);
+                    foreach($result as $education_row)
+                    {
+                        ?>
                     <div class="resume-item">
-                        <p class="year">2021 - 2024</p>
-                        <h3>Bachelor of Computer Science</h3>
-                        <p class="company">Savitribai Phule Pune University, Pune</p>
-                        <p>
-                            Graduated with First Class, achieving a 7.98 CGPA.
-                            <br /><br />
-                            Built a strong foundation in computer science principles,
-                            programming languages, and software development practices.
-                        </p>
-                    </div>
-
-                    <!-- <div class="resume-item">
-              <p class="year">2018 - 2021</p>
-              <h3>Diploma in Computer Technology</h3>
-              <p class="company">
-                Maharashtra State Board of Technical Education, Mumbai
-              </p>
-              <p>
-                Achieved First Class with Distinction, securing 92.86%.
-                <br /><br />
-                Awarded a Certificate of Appreciation for outstanding
-                performance in the State Level Online Quiz Competition on
-                Programming in Java (22412), organized by the Department of
-                Computer Engineering, Government Polytechnic Ambad, with a
-                passing percentage of 94%.
-              </p>
-            </div> -->
-
-                    <div class="resume-item">
-                        <p class="year">2020 - 2021</p>
-                        <h3>HSC (Science)</h3>
+                        <p class="year"><?=$education_row['start_year']?> - <?=$education_row['end_year']?></p>
+                        <h3><?=$education_row['education']?></h3>
                         <p class="company">
-                            Maharashtra State Board of Secondary and Higher Secondary
-                            Education, Pune
+                            <?=$education_row['university']?>
                         </p>
                         <p>
-                            Completed Higher Secondary Education with a focus on Science,
-                            building a solid foundation for academic and professional
-                            growth in technology.
-                            Developed critical problem-solving skills and a strong
-                            understanding of core scientific principles.
+                            <?=$education_row['description']?>
                         </p>
                     </div>
-
-                    <div class="resume-item">
-                        <p class="year">2018 - 2019</p>
-                        <h3>SSC (Semi-English)</h3>
-                        <p class="company">
-                            Maharashtra State Board of Secondary and Higher Secondary
-                            Education, Pune
-                        </p>
-                        <p>
-                            Earned the Secondary School Certificate (SSC) with a strong
-                            academic foundation in key subjects.
-                            <br />
-                            Gained essential problem-solving and critical thinking skills,
-                            paving the way for advanced studies and a career in
-                            technology.
-                        </p>
-                    </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
 
@@ -218,54 +162,19 @@
                     user-friendly solutions.
                 </p>
                 <div class="resume-list">
+                    <?php
+                    $query="SELECT * FROM skills";
+                    $result=mysqli_query($conn,$query);
+                    foreach($result as $skill_row)
+                    {
+                        ?>
                     <div class="resume-item">
-                        <i class="bx bxl-html5"></i>
-                        <span>HTML5</span>
+                        <i class="<?=$skill_row['skill_name']?>"></i>
+                        <span><?=$skill_row['title']?></span>
                     </div>
-                    <div class="resume-item">
-                        <i class="bx bxl-css3"></i>
-                        <span>CSS3</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class="bx bxl-javascript"></i>
-                        <span>javaScript (ES6+)</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class="bx bxl-jquery"></i>
-                        <span>JQuery</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class="bx bxs-file-json"></i>
-                        <span>JSON</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class="bx bxl-react"></i>
-                        <span>React.js</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class="bx bxl-bootstrap"></i>
-                        <span>Bootstrap</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class="bx bx-data"></i>
-                        <span>MySQL</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class='bx bxl-php'></i>
-                        <span>PHP</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class='bx bxs-hot'></i>
-                        <span>CodeIgniter 3</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class='bx bxl-git'></i>
-                        <span>Git</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class="bx bxl-github"></i>
-                        <span>Github</span>
-                    </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
 
