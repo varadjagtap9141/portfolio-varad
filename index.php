@@ -354,7 +354,7 @@
         </div>
 
         <div class="contact-box">
-            <form action="" method="POST" id="contactForm">
+            <form action="admin/component/save_contact.php" method="POST" id="contactForm">
                 <h2 class="heading">Contact <span>Me!</span></h2>
                 <div class="field-box">
                     <input type="text" name="name" id="fullName" placeholder="Full Name" required />

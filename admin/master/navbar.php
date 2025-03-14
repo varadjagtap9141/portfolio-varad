@@ -131,23 +131,11 @@
             </li>
             <li class="menu-item">
               <a href="contact.php" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-link"></i>
+                <i class="menu-icon tf-icons bx bx-phone"></i>
                 <div data-i18n="Analytics">Contact</div>
               </a>
             </li>
-            <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Support</span>
-            </li>
             <!-- Components -->
-            <li class="menu-item">
-              <a
-                href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                class="menu-link"
-              >
-                <i class="menu-icon tf-icons bx bx-support"></i>
-                <div data-i18n="Support">Support</div>
-              </a>
-            </li>
           </ul>
         </aside>
         <!-- / Menu -->
