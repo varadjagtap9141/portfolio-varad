@@ -130,9 +130,9 @@
               </ul>
             </li>
             <li class="menu-item">
-              <a href="portfolio.php" class="menu-link">
+              <a href="contact.php" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-link"></i>
-                <div data-i18n="Analytics">Portfolio</div>
+                <div data-i18n="Analytics">Contact</div>
               </a>
             </li>
             <li class="menu-header small text-uppercase">
