@@ -1,4 +1,10 @@
 <?php include "navbar.php";?>
+<?php
+extract($_POST);
+$query="SELECT * FROM admin Where admin_id='$_SESSION[admin_id]'";
+$result=mysqli_query($conn,$query);
+$admin=mysqli_fetch_assoc($result);
+?>
 <!-- Content -->
               <div class="row">
                 <div class="col-lg-8 mb-4 order-0">
@@ -6,7 +12,7 @@
                     <div class="d-flex align-items-end row">
                       <div class="col-sm-7">
                         <div class="card-body">
-                          <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+                          <h5 class="card-title text-primary">Congratulations <?=$admin['name']?>! 🎉</h5>
                           <p class="mb-4">
                             You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
                             your profile.
