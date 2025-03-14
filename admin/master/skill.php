@@ -48,7 +48,7 @@
                         <tr>
                             <td><?=$key+1?></td>
                             <td><i class="<?=$data['skill_name']?>" style="font-size:50px;"></i></td>
-                            <td>
+                            <td class="d-flex justify-content-center">
                                 <a href="edit_skill.php?skill_id=<?= $data['skill_id']?>"
                                     class="btn btn-primary btn-sm mx-1"><i class='bx bx-edit'></i></a>
                                 <a onClick="return confirm('Are You Sure?')"
